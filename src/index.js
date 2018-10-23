@@ -1,10 +1,11 @@
-import express from'express';
+import express from 'express';
 import path from 'path';
 import mongoose from 'mongoose';
-import auth from './routes/auth.js';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import Promise from 'bluebird';
+import auth from './routes/auth.js';
+import users from './routes/users.js';
 
 const app = express();
 
@@ -19,6 +20,7 @@ mongoose.connection.once('open', () => {
 });
 
 app.use('/api/auth', auth);
+app.use('/api/users', users);
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
