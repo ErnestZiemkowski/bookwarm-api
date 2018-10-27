@@ -20,6 +20,7 @@
     "lodash": "^4.17.11",
     "mongoose": "^5.3.5",
     "mongoose-unique-validator": "^2.0.2",
+    "nodemailer": "^4.6.8",
     "path": "^0.12.7"
   }
 }
